@@ -20,3 +20,21 @@ The Project is written in Javascript code and HTML to ananlyze to records to cal
 - Cloned the repository to Github
 - The outcome displays in browser console
 
+# Deployment
+- Application GitHub URL submitted.
+
+- GitHub repository contains 3 files, index.html, index.js and readme.md
+- All files contains application code.
+
+
+The site is live at GitHub: 
+The Site is also live at: 
+
+
+Contact
+If you have any questions, please contact me at:
+
+Github Profile: agaffar74
+= Email: a_gaffar74@yahoo.com
+
+= LinkedIn: abdul-gaffar74
