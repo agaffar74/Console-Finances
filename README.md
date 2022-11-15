@@ -18,7 +18,15 @@ The Project is written in Javascript code and HTML to ananlyze to records to cal
 
 ## Setup/Installation
 - Cloned the repository to Github
-- The outcome displays in browser console
+- The outcome displays in browser console as follows: 
+
+                                Financial Analysis
+                                --------------------
+                                Total Months:86
+                                Total: $38382578
+                                Greatest Increase in Profits: Feb-2012,1170593
+                                Greatest Decrease in Profits: Sep-2013,-1196225
+
 
 ## Deployment
 - Application GitHub URL submitted.
