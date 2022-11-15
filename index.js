@@ -86,3 +86,39 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+
+var totMonths=0;
+    totincreased = 0;
+    avChange =0;
+    grtIncreased = 0;
+  
+
+console.log("Financial Analysis\n--------------------");
+
+//The total number of months included in the dataset
+totMonths = (finances.length);
+console.log("Total Months:" +totMonths);
+
+// The net total amount of Profit/Losses over the entire period
+const financesArray = finances.map((el) => el[1]);
+const totIncreased = financesArray.reduce(
+    (accVal, curVal) => accVal + curVal,
+    0);
+console.log("Total: $"+totIncreased);
+
+// The average of the changes in Profit/Losses over the entire period
+
+avChange=totIncreased/totMonths;
+console.log("Average  Change: $"+avChange.toFixed(2));
+
+
+
+const grtIncrease = finances.reduce((prev, cur) => (cur[1] > prev[1] ? cur : prev));
+console.log("Greatest Increase in Profits: "+ grtIncrease);
+
+const grtdecreased = finances.reduce((prev, cur) => (cur[1] < prev[1] ? cur : prev));
+console.log("Greatest Decrease in Profits: " +grtdecreased);
+
+
+
