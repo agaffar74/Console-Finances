@@ -100,25 +100,27 @@ console.log("Financial Analysis\n--------------------");                        
 
 //The total number of months included in the dataset
 var totMonths = (finances.length);
-console.log("Total Months:" +totMonths);                                                    // This will print The total number of months included in the dataset.
+console.log("Total Months:" +totMonths);                                                    // This will print the total number of months included in the dataset.
 
 // The net total amount of Profit/Losses over the entire period
 const financesArray = finances.map((el) => el[1]);
 const totIncreased = financesArray.reduce(
     (accVal, curVal) => accVal + curVal,
     0);
-console.log("Total: $"+totIncreased);                                                       // This will print The net total amount of Profit/Losses over the entire period.
+console.log("Total: $"+totIncreased);                                                       // This will print the net total amount of Profit/Losses over the entire period.
 
 // The average of the changes in Profit/Losses over the entire period
 
 var avChange = totIncreased/totMonths;
-console.log("Average  Change: $"+avChange.toFixed(2));                                      // This will print The average of the changes in Profit/Losses over the entire period.
+console.log("Average  Change: $"+avChange.toFixed(2));                                      // This will print the average of the changes in Profit/Losses over the entire period.
 
 
+//The greatest increase in profits over the entire period
 const grtIncrease = finances.reduce((prev, cur) => (cur[1] > prev[1] ? cur : prev));
-console.log("Greatest Increase in Profits: "+ grtIncrease);                                 // This will print The greatest increase in profits (date and amount) over the entire period
+console.log("Greatest Increase in Profits: "+ grtIncrease);                                 // This will print the greatest increase in profits (date and amount) over the entire period
 
+//The greatest decrease in losses over the entire period.
 const grtdecreased = finances.reduce((prev, cur) => (cur[1] < prev[1] ? cur : prev));
-console.log("Greatest Decrease in Profits: " +grtdecreased);                                // This will print The greatest decrease in losses (date and amount) over the entire period.
+console.log("Greatest Decrease in Profits: " +grtdecreased);                                // This will print the greatest decrease in losses (date and amount) over the entire period.
 
 
