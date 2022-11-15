@@ -93,6 +93,7 @@ var totMonths=0;
     avChange =0;
     grtIncreased = 0;
   
+  
 
 console.log("Financial Analysis\n--------------------");
 
