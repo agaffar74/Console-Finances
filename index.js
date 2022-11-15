@@ -88,39 +88,48 @@ var finances = [                                    //var finances for given a d
 ];
 
 
-var totMonths      = 0;                                                                     // Declaration of all the variables
-const totincreased = 0;
-var avChange       = 0;
-const grtIncreased = 0;
-const grtDecreased = 0;
-  
-  
+var totMonths = finances.length;
+var netIncreased = 0;
+var change = 0;
+var average;
+var analysis
+var net = 0;
+var netArray = [];
+var netChangeSum = 0;
+var grtIncreased = ['', 0];
+var grtDecreased = ['', 0];
 
-console.log("Financial Analysis\n---------------------");                                    // This will print the headline above the required output
+for (var i = 0; i < finances.length; i++) {
+  for (var j = 0; j < finances[i].length; j++) {
+    if(typeof finances[i][j] !== 'string') {
+      netIncreased += finances[i][j]
+      change = finances[i][j] - net;
+      net = finances[i][j];
+      netArray.push(change);
 
-//The total number of months included in the dataset
-var totMonths = (finances.length);
-console.log("Total Months:" +totMonths);                                                    // This will print the total number of months included in the dataset.
+      if (change > grtIncreased[1]) {
+        grtIncreased = [finances[i][0], finances[i][1]];
+      }
 
-// The net total amount of Profit/Losses over the entire period
-const financesArray = finances.map((el) => el[1]);                                          //The map() method is used to create a new array populated with the results of calling a provided function on every element in the calling array.
-const totIncreased = financesArray.reduce(
-    (accVal, curVal) => accVal + curVal,                                                    // reduce() is used to return the sum of all the elements in an array:
-    0);
-console.log("Total: $"+totIncreased);                                                       // This will print the net total amount of Profit/Losses over the entire period.
+      if (change < grtDecreased[1]) {
+        grtDecreased = [finances[i][0], finances[i][1]];
+      }
+    }
+  }
+}
 
-// The average of the changes in Profit/Losses over the entire period
+for (var i = 0; i < netArray.length; i++) {
+  netChangeSum += netArray[i];
+}
 
-var avChange = totIncreased/totMonths;
-console.log("Average  Change: $"+avChange.toFixed(2));                                      // This will print the average of the changes in Profit/Losses over the entire period.
+average = Math.round((netChangeSum / 86) * 100) / 100;
 
+analysis = 'Financial Analysis ' + '\n' + 
+'------------------' + '\n' + 
+'Total Months: ' + totMonths + '\n' + 
+'Total: $' + netIncreased + '\n' + 
+'Average Change: ' + average + '\n' + 
+'Greatest Increase: ' + grtIncreased[0] + ': $' + grtIncreased[1] + '\n' + 
+'Greatest Decrease: ' + grtDecreased[0] + ': $' + grtDecreased[1];
 
-//The greatest increase in profits over the entire period
-const grtIncrease = finances.reduce((prev, cur) => (cur[1] > prev[1] ? cur : prev));
-console.log("Greatest Increase in Profits: "+ grtIncrease);                                 // This will print the greatest increase in profits (date and amount) over the entire period
-
-//The greatest decrease in losses over the entire period.
-const grtdecreased = finances.reduce((prev, cur) => (cur[1] < prev[1] ? cur : prev));
-console.log("Greatest Decrease in Profits: " +grtdecreased);                                // This will print the greatest decrease in losses (date and amount) over the entire period.
-
-
+console.log(analysis);
