@@ -1,7 +1,10 @@
 # Console-Finances
+
+# Project Description:
 Creating code for analyzing the financial records of a company from a given financial dataset in the starter/index.js file.
 
-## JavaScript Code to ananlyze to records to calculate each of the following:
+## Technology Useed 
+The Project is written in Javascript code and HTML to ananlyze to records to calculate each of the following:
 
 - The total number of months included in the dataset.
 
@@ -12,4 +15,8 @@ Creating code for analyzing the financial records of a company from a given fina
 - The greatest increase in profits (date and amount) over the entire period and
 
 - The greatest decrease in losses (date and amount) over the entire period.
+
+# Setup/Installation
+- Cloned the repository to Github
+- The outcome displays in browser console
 
