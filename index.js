@@ -96,14 +96,14 @@ const grtDecreased = 0;
   
   
 
-console.log("Financial Analysis\n----------------------");                                    // This will print the headline above the required output
+console.log("Financial Analysis\n---------------------");                                    // This will print the headline above the required output
 
 //The total number of months included in the dataset
 var totMonths = (finances.length);
 console.log("Total Months:" +totMonths);                                                    // This will print the total number of months included in the dataset.
 
 // The net total amount of Profit/Losses over the entire period
-const financesArray = finances.map((el) => el[1]);
+const financesArray = finances.map((el) => el[1]);                                          //The map() method was used to create a new array populated with the results of calling a provided function on every element in the calling array.
 const totIncreased = financesArray.reduce(
     (accVal, curVal) => accVal + curVal,
     0);
