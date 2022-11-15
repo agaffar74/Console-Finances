@@ -96,7 +96,7 @@ const grtDecreased = 0;
   
   
 
-console.log("Financial Analysis\n--------------------");                                    // This will print the headline above the required output
+console.log("Financial Analysis\n----------------------");                                    // This will print the headline above the required output
 
 //The total number of months included in the dataset
 var totMonths = (finances.length);
