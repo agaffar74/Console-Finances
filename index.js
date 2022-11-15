@@ -103,9 +103,9 @@ var totMonths = (finances.length);
 console.log("Total Months:" +totMonths);                                                    // This will print the total number of months included in the dataset.
 
 // The net total amount of Profit/Losses over the entire period
-const financesArray = finances.map((el) => el[1]);                                          //The map() method was used to create a new array populated with the results of calling a provided function on every element in the calling array.
+const financesArray = finances.map((el) => el[1]);                                          //The map() method is used to create a new array populated with the results of calling a provided function on every element in the calling array.
 const totIncreased = financesArray.reduce(
-    (accVal, curVal) => accVal + curVal,
+    (accVal, curVal) => accVal + curVal,                                                    // reduce() is used to return the sum of all the elements in an array:
     0);
 console.log("Total: $"+totIncreased);                                                       // This will print the net total amount of Profit/Losses over the entire period.
 
